@@ -1,9 +1,31 @@
 {
   "name": "leafletTest",
   "version": "0.0.0",
+  "description": "Sample leaflet application on Google Cloud Platform",
+  "repository": "https://github.com/stepbot/leafletTest",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "deploy": "gcloud preview app deploy app.yaml",
+    "init-cloudsql": "node books/model-cloudsql.js"
+  },
+  "author": "stepbot",
+  "contributors": [
+    {
+      "name": "Stephan Botes",
+      "email": "stephanbotes@gmail.com"
+    }
+  ],
+  "license": "Apache Version 2.0",
+  "semistandard": {
+    "globals": [
+      "after",
+      "afterEach",
+      "before",
+      "beforeEach",
+      "describe",
+      "it"
+    ]
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -12,6 +34,14 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "gcloud": "~0.31.0",
+    "kerberos": "^0.0.19",
+    "lodash": "^4.11.1",
+    "nconf": "^0.8.4",
+    "prompt": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=0.12.7"
   }
 }
